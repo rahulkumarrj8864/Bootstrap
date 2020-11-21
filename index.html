@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+ <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+ <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<style>
+  /* :root {
+    
+  } */
+   * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Whitney,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  } 
+  *,::after,::before {
+    box-sizing: border-box;
+  }
+  body {
+    overflow-x: hidden;
+    width: 100%;
+    margin: 0;
+  }
+  .main-header {
+    height: 80px;
+    color: #ffffff;
+    top: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+    background-color: #fff;
+    box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.05);
+  }
+  .main-bound {
+    min-width: 980px;
+    line-height: 80px;
+    margin: auto;
+  }
+  /* div {
+    display: block;
+  } */
+  .sprit-image {
+    background: url("sprit-image.png");
+    background-size: 1404px 105px;
+    display: inline-block;
+  }
+  .logo-container {
+    height: inherit;
+    float: left;
+  }
+  .logo-sprit {
+    vertical-align: middle;
+    display: inline-block;
+    cursor: pointer;
+  }
+  .logo-image {
+    width: 53px;
+    height: 36px;
+    background-position: -462px 0;
+
+  }
+  .home-navbar {
+    display: block;
+    height: 80px;
+    line-height: 80px;
+    float: left;
+  }
+  .home-nav-link {
+    display: inline-block;
+    /* float: left; */
+  }
+  .home-nav-content {
+
+    text-align: center;
+    float: left;
+    border: none;
+  }
+   .nav-link {
+    display: inline;
+  } 
+  .link-home {
+    /* padding: 0 17px 28px; */
+    text-align: center;
+    text-decoration:none;
+    font-size: 14px;
+    letter-spacing: .3px;
+    color: #282c3f;
+    border-bottom: none;
+    text-transform: uppercase;
+    font-weight: 500;
+    outline: none;
+    transition: left 0.2s ease-out,width 0.2s ease-out;
+  }
+  a:hover {
+    text-decoration: none;
+  }
+  .search_div {
+    line-height: 0;
+    position: relative;
+    float: right;
+    margin: 20px 20px 20px 60px;
+  }
+  .search_div > input.seachbar_input {
+    display: inline-block;
+    /* float: left; */
+    font-size: 14px;
+    height: 40px;
+    width: 280px;
+    line-height: 24px;
+    color: #696e79;
+    box-sizing: border-box;
+    padding: 8px 10px 10px;
+    margin: 0;
+    outline: 0;
+    border: 1px solid #f5f5f6;
+    border-radius: 0 4px 4px 0;
+    border-left: 0;
+    background: #f5f5f6;
+}
+a.input_search{
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+    display: inline-block;
+    height: 28px;
+    width: 40px;
+    text-align: center;
+    padding: 8px 0 2px;
+    background: #f5f5f6;
+    border: 1px solid #f5f5f6;
+    border-right: none;
+    border-radius: 4px 0 0 4px;
+    position: absolute;
+    left: -41px;
+}
+.search_icon {
+    width: 21px;
+    height: 21px;
+    display:inline-block;
+    transform: scale(0.7);
+    background-position: -754px 0;
+}
+.icon_text {
+  float: right;
+  display: flex;
+  line-height: 0;
+  height: 40px;
+  margin: 20px 30px 0 10px;
+}
+.icon_user_container {
+  position: relative;
+  height: 60px;
+  display: block;
+  margin: 0 20px 0 15px;
+}
+.icon_user {
+  padding: 0 12px 0 17px;
+  position: relative;
+  display: flex;
+  height: 40px;
+}
+.icon_user_span {
+  margin: 10px 0 0;
+    position: absolute;
+    bottom: 13px;
+    left: 5px;
+    display: block;
+}
+.icon_profile {
+  width: 24px;
+    height: 24px;
+    background-position: -298px -56px;
+}
+.icon_profile_text {
+  color: #000;
+    position: absolute;
+    bottom: 4px;
+    left: 1px;
+    font-size: 12px;
+    font-weight: 500;
+    display: inline-block;
+    padding-top: 10px;
+    line-height: 6px;
+}
+.icon_wishlist {
+  margin: 0 55px 0 10px;
+}
+.icon_carts {
+  margin: 0 50px 0 15px;
+}
+.icon_wishlist, .icon_carts {
+  display: flex;
+    text-decoration: none;
+    position: relative;
+}
+.icon_wishlist_span {
+  left: 11px;
+}
+.icon_wishlist_span,.icon_carts_span {
+  margin: 8px 0 0;
+    position: absolute;
+    bottom: 14px;
+  
+}
+.icon_wishlists {
+  width: 22px;
+    height: 22px;
+    background-position: -320px -56px;  
+}
+.icon_carts_span {
+  left: -1px;
+}
+.icon_cartss {
+  width: 22px;
+    height: 22px;
+    background-position: -341px -56px;
+}
+.bag_badge {
+  white-space: nowrap;
+    text-align: center;
+    line-height: 18px;
+    padding: 0 6px;
+    height: 18px;
+    background: #ff3f6c;
+    position: absolute;
+    border-radius: 50px;
+    font-size: 12px;
+    color: #fff;
+    left: 13px;
+    top: -2px;
+    font-weight: 700;
+}
+/* .bag_visiable {
+  background-color: #7e818c;
+    visibility: hidden;
+} */
+.user_action {
+  width: 250px;
+    left: -137.5px;
+    top: 62px;
+    position: absolute;
+    padding: 25px 20px 15px;
+    z-index: 9;
+    -webkit-box-shadow: 0 1px 10px rgba(0,0,0,.08);
+    box-shadow: 0 1px 10px rgba(0,0,0,.08);
+    -webkit-transition: opacity .2s ease-out,visibility .2s ease-out;
+    transition: opacity .2s ease-out,visibility .2s ease-out;
+    background-color: #fff;
+    color: #3e4152;
+    border: 1px solid #f5f5f6;
+    visibility: visible;
+    opacity: 0;
+    margin: -2px 0;
+}
+.user_border {
+  display: block;
+    top: -5px;
+    position: absolute;
+    width: 58px;
+    border-bottom: 4px solid #f16565;
+    left: 124px;
+}
+.user_action_content {
+  display: block;
+}
+/* Main Container */
+.main_container {
+  margin-top: 80px;
+}
+.main_base {
+  width: 100%;
+}
+.carousel_main .carousel_container > div .carousel_stretch {
+  width: 100%;
+}
+.carousel_main .carousel_container > div {
+  margin: 0 auto;
+}
+.carousel_base {
+  box-sizing: border-box;
+    padding-top: 20px;
+    padding-bottom: 15px;
+    margin: 0 auto;
+}
+</style>
+</head>
+<body>
+  <div class="container-fluid">
+    <header class="main-header container-fluid">
+      <div class="main-bound">
+        <div class="logo-container">
+          <a class="sprit-image logo-image logo-sprit" href=""></a>
+        </div>
+        <nav class="home-navbar">
+          <div class="home-nav-link">
+            <div class="home-nav-content">
+              <div class="nav-link">
+                <a class="link-home" style="border-bottom-color: #ee5f73;" href="#">MEN</a>
+              </div>
+            </div>
+            <!------>
+            <div class="home-nav-content">
+              <div class="nav-link">
+                <a class="link-home" style="border-bottom-color: #ee5f73;" href="#">WOMEN</a>
+              </div>
+            </div>
+            <!------>
+            <div class="home-nav-content">
+              <div class="nav-link">
+                <a class="link-home" style="border-bottom-color: #ee5f73;" href="#">KIDS</a>
+              </div>
+            </div>
+            <!------>
+            <div class="home-nav-content">
+              <div class="nav-link">
+                <a class="link-home" style="border-bottom-color: #ee5f73;" href="#">HOME & LIVINGS</a>
+              </div>
+            </div>
+        </nav>
+        <!--icon & text-->
+        <div class="icon_text">
+          <div class="icon_user_container">
+              <div class="icon_user">
+                <span class="sprit-image icon_user_span icon_profile"></span>
+                <span class="icon_profile_text">Profile</span>
+              </div>
+              <div class="user_action">
+                <div class="user_border"></div>
+                <div class="user_action_content">
+
+                </div>
+              </div>
+          </div>
+          <a class="icon_wishlist" href="">
+            <span class="sprit-image icon_wishlist_span icon_wishlists"></span>
+            <span class="icon_profile_text">Wishlist</span>
+          </a>
+          <a class="icon_carts" href="">
+            <span class="sprit-image icon_carts_span icon_cartss"></span>
+            <span class="bag_badge bag_visiable">1</span>
+            <span class="icon_profile_text">Bag</span>
+          </a>
+        </div>
+      </div>
+        <!---Search Input-->
+        <div class="search_div">
+          <input class="seachbar_input" type="text" placeholder="Search for products, brands and more">
+          <a href="" class="input_search">
+            <span class="sprit-image search_icon"></span>
+          </a>
+        </div>
+      </div>
+    </header>
+    <!--Main Content-->
+    <main class="main_container container-fluid" >
+      <div class="main_base">
+        <div class="carousel_main">
+          <div class="carousel_container">
+            <div class="carousel_stretch">
+              <div class="carousel_base">
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
